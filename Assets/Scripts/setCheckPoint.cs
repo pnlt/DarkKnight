@@ -5,16 +5,21 @@ public class setCheckPoint : MonoBehaviour
 {
   [SerializeField] private Transform[] checkPoints;
     private List<double> distanceList = new List<double>();
-    private Health playerHealth;
+  [SerializeField]  private Health playerHealth;
 
-  
+  private void Awake() {
+    //playerHealth = new Health();
+ } 
 
 
   private void Update() {
     if(playerHealth.getDie()){
-      transform.position = CalDistance(transform, checkPoints).position;
-
+      Instantiate(gameObject, CalDistance(transform, checkPoints).position, Quaternion.identity);
+      //Debug.Log("PN nhu cc");
+      playerHealth.setDie(false);
     }
+
+    //Debug.Log(playerHealth.getDie());
     
 
   }
@@ -24,7 +29,7 @@ public class setCheckPoint : MonoBehaviour
    if (distanceList == null) {
     for(var i = 0; i < checkPointsList.Length; i++)
     {
-     if(distance <= Vector3.Distance(playerPosition.position, checkPointsList[i].position)) {
+     if(distance >= Vector3.Distance(playerPosition.position, checkPointsList[i].position)) {
       playerChecksPoint = checkPointsList[i];
 
      } 

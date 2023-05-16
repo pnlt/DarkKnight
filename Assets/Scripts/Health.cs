@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -12,11 +10,10 @@ public class Health : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb;
-    public bool isDie;
+    public bool isDie = false;
 
     private void Awake()
     {
-      isDie = false;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         
@@ -47,25 +44,30 @@ public class Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             Die();
+            Debug.Log(isDie);
         }
     }
 
     private void Die()
     {
-      isDie = true;
+        isDie = true;
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
         StartCoroutine(Death());
 
     }
     public bool getDie() {
-      return isDie ;
+      return isDie;
     }
-    private void RestartLevel()
+
+    public void setDie(bool isDead) {
+       isDie = isDead;
+    }
+    /*private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         isDie = false;
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
