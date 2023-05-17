@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CamerController : MonoBehaviour {
     public float speed;
     public float clampLeft;
     public float clampRight;
+    [SerializeField] private Transform player;
 
     private float cameraX;
 
@@ -29,5 +28,7 @@ public class CamerController : MonoBehaviour {
         {
             Debug.Log(cameraX);
         }
+         if (player != null)
+        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
 }

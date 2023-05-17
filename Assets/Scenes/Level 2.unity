@@ -848,7 +848,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337182350}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d0f8febe7882c14ab127b4900d6c779, type: 3}
   m_Name: 
@@ -856,6 +856,18 @@ MonoBehaviour:
   checkPoints:
   - {fileID: 896273627}
   - {fileID: 1282663308}
+  playerHealth: {fileID: 337182357}
+--- !u!114 &337182357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8333691794411020296, guid: 6d52bb725315dd9468b75257a668612d, type: 3}
+  m_PrefabInstance: {fileID: 337182349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337182350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5691a0c03a36be746b5b9192c4c1dce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &344245723
 PrefabInstance:
   m_ObjectHideFlags: 0
