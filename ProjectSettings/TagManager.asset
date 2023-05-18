@@ -8,6 +8,7 @@ TagManager:
   - Trap
   - Enemy
   - Weapon
+  - deadzone
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 323921259
+    locked: 0
+  - name: weapon
+    uniqueID: 568029593
+    locked: 0
+  - name: UI
+    uniqueID: 318185163
     locked: 0
